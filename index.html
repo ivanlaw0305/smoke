@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, minimum-scale=1, maximum-scale=1" name="viewport">
+        <title>Quit Smoking Web App</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/slider/jquery.flexslider-min.js"></script>
+        <script src="js/contact.js"></script>
+        <script src="js/custom.js"></script>
+
+        <script>
+            $(document).bind('pagechange', function () {
+                $('.ui-page-active .ui-listview').listview('refresh');
+                $('.ui-page-active :jqmData(role=content)').trigger('create');
+            });
+           
+
+
+
+
+
+
+        </script>
+        <style>
+
+            div.social {
+                text-align:center;
+                padding:4px;
+                border-top:1px solid #fff;
+                border-bottom:1px solid #fff;
+                -webkit-transition-duration:0.5s;
+                -moz-transition-duration:0.5s;
+                -o-transition-duration:0.5s;
+                transition-duration:0.5s;
+                cursor:pointer;
+            }
+            div.social:hover {
+                border-top:1px solid #efefef;
+                border-bottom:1px solid #efefef;
+            }
+            div.social img {
+                width:12%;
+                margin-right:10px;
+                margin-top:5px;
+                max-width:32px;
+            }
+            .flexslider {
+                position: relative;
+                background:#1f2432;
+                border-top:1px solid #fff;
+                border-bottom:3px solid #fff;
+            }
+            .flexslider .slides {
+                zoom: 1;
+            }
+            .flexslider .slides > li {
+                position: relative;
+            }
+            .flex-container {
+                zoom: 1;
+                position: relative;
+                margin-bottom:0px;
+            }
+            .slidesimg{
+                border-radius: 8px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto; 
+                max-width:90%;
+                max-height:90%;
+            }
+        </style>
+    </head> 
+    <body> 
+        <div data-role="page" id="pageone" >
+            <div data-role="header" class="ui-bar ui-bar-b" data-theme="b">
+                <h1>Quit Smoking</h1>
+            </div>
+            <div class="flex-container">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li><img src="images/1.jpg" alt="slide" class="slidesimg"></li>
+                        <li><img src="images/2.jpg" alt="slide" class="slidesimg"></li>
+                        <li><img src="images/3.jpg" alt="slide" class="slidesimg"></li>
+                        <li><img src="images/4.jpg" alt="slide" class="slidesimg"></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div data-role="content">
+
+                <ul data-role="listview" id="listview">
+                        <li><a href="index.html" rel="external">Home</a></li>
+                        <li><a href="login.html" rel="external">Login</a></li>
+                        <li><a href="start.html" rel="external">Quit Smoking: START</a></li>
+                        <li><a href="board.html" rel="external">Message Board</a></li>
+                        <li><a href="edit.html" rel="external">Edit Content</a></li>
+                        <li><a href="contact.html" rel="external">Contact us</a></li>
+                        <li><a href="logout.php" rel="external">Logout</a></li>
+                </ul>		
+            </div>
+
+            <!-- social -->
+            <div class="social"> <a href="https://www.facebook.com/"><img src="images/social/facebook.png" alt="facebook"></a> <a href="#"><img src="images/social/twitter.png" alt="twitter"></a> <a href="#"><img src="images/social/google.png" alt="google"></a> <a href="#"><img src="images/social/dribbble.png" alt="dribble"></a> <a href="#"><img src="images/social/pinterest.png" alt="pintarest"></a> </div>
+            <!-- /social -->
+
+            <div data-role="footer">
+                <img src='images/qsmoke1.jpg' border='0' alt="Quit smoking" style="width:100%;height:100%;"/>
+            </div>
+        </div>
+
+        <!--contact page -->
+
+        <div data-role="page" id="contact_us">
+            <div data-role="header" data-theme="b">
+                <h1>Contact us</h1>
+                <a href="#" data-icon="back" data-rel="back" title="Go back" rel="external">HOME</a>
+            </div>
+
+        </div>
+
+
+    </body>
+</html>

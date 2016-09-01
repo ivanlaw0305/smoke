@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+
+        <title>Quit Smoking: START</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <style>
+            .startimg {
+                border-radius: 8px;
+                display: block;
+                margin: 0 auto;
+            }
+            div.social {
+                text-align:center;
+                padding:4px;
+                border-top:1px solid #fff;
+                border-bottom:1px solid #fff;
+                -webkit-transition-duration:0.5s;
+                -moz-transition-duration:0.5s;
+                -o-transition-duration:0.5s;
+                transition-duration:0.5s;
+                cursor:pointer;
+            }
+            div.social:hover {
+                border-top:1px solid #efefef;
+                border-bottom:1px solid #efefef;
+            }
+            div.social img {
+                width:12%;
+                margin-right:10px;
+                margin-top:5px;
+                max-width:32px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div data-role="page" id="start" >
+            <div data-role="header" data-theme="b">
+                <h1>Quit Smoking: START</h1>
+                <a href="#" data-icon="back" data-rel="back" title="Go back" rel="external">BACK</a>
+                <a href="#popupMenu" data-history="false" data-rel="popup" data-transition="slideup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-gear ui-btn-icon-right ui-btn-a">Menu</a>
+                <div data-role="popup" id="popupMenu" data-theme="b">
+                    <ul data-role="listview" data-inset="true" style="min-width:210px;">
+                        <li><a href="index.html" rel="external">Home</a></li>
+                        <li><a href="login.html" rel="external">Login</a></li>
+                        <li><a href="start.html" rel="external">Quit Smoking: START</a></li>
+                        <li><a href="board.html" rel="external">Message Board</a></li>
+                        <li><a href="edit.html" rel="external">Edit Content</a></li>
+                        <li><a href="contact.html" rel="external">Contact us</a></li>
+                        <li><a href="logout.php" rel="external">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <img src='images/woman-breaking-cigarette-350.jpg' alt="woman" class="startimg"/>
+            <div data-role="content">	
+                <h3>Start your stop smoking plan with START</h3>
+                <p>
+                    <strong>S = Set a quit date.</strong>
+                </p>
+                <p>Choose a date within the next two weeks, so you have enough time to prepare without losing your motivation to quit. If you mainly smoke at work, quit on the weekend, so you have a few days to adjust to the change.</p>
+                <p>
+                    <strong>T = Tell family, friends, and co-workers that you plan to quit.</strong>
+                </p>
+                <p>Let your friends and family in on your plan to quit smoking and tell them you need their support and encouragement to stop. Look for a quit buddy who wants to stop smoking as well. You can help each other get through the rough times.</p>
+                <strong></strong>
+                <p>
+                    <strong>A = Anticipate and plan for the challenges you'll face while quitting.</strong>
+                </p>
+                <p>Most people who begin smoking again do so within the first three months. You can help yourself make it through by preparing ahead for common challenges, such as nicotine withdrawal and cigarette cravings.</p>
+                <p>
+                    <strong>R = Remove cigarettes and other tobacco products from your home, car, and work.</strong>
+
+                <p>Throw away all of your cigarettes (no emergency pack!), lighters, ashtrays, and matches. Wash your clothes and freshen up anything that smells like smoke. Shampoo your car, clean your drapes and carpet, and steam your furniture.</p>
+                <strong></strong>
+                <p>
+                    <strong>T = Talk to your doctor about getting help to quit.</strong>
+                </p>
+                <p>Your doctor can prescribe medication to help with withdrawal and suggest other alternatives. If you can't see a doctor, you can get many products over the counter at your local pharmacy or grocery store, including the nicotine patch, nicotine lozenges, and nicotine gum.</p>	
+            </div>
+            <!-- social -->
+            <div class="social"> <a href="#"><img src="images/social/facebook.png" alt="facebook"></a> <a href="#"><img src="images/social/twitter.png" alt="twitter"></a> <a href="#"><img src="images/social/google.png" alt="google"></a> <a href="#"><img src="images/social/dribbble.png" alt="dribble"></a> <a href="#"><img src="images/social/pinterest.png" alt="pintarest"></a> </div>
+            <!-- /social -->
+            <div data-role="footer" data-theme="b" >
+                <h4>Quit Smoking: START</h4>
+            </div>
+        </div>
+    </body>
+</html>

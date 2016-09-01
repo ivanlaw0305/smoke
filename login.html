@@ -1,0 +1,118 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/jquery.cookie.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                var username = $.cookie('username');
+                var password = $.cookie('password');
+                $("#mylogin").on('click', function () {
+                    $("#show").hide();
+                    $("#show").empty();
+                });
+                $("#mypassword").on('click', function () {
+                    $("#show").hide();
+                    $("#show").empty();
+                });
+                if (username === "admin") {
+
+                    $("#show").append("<h4 align='center'>You had already login!</h4>");
+                }
+
+                $("#login_btn").on('click', function () {
+                    var URLs = "login.php";
+                    var username_login = $("#mylogin").val();
+                    var password_login = $("#mypassword").val();
+                    if (username === "admin") {
+
+                        $("#show").append("<h4 align='center'>You had already login!</h4>");
+                        return;
+                    } else {
+
+                        if (username_login.length === 0) {
+                            $("#show").append("<h4 align='center'>Your username is empty</h>");
+                            $("#show").load();
+                            $("#show").show();
+                            return;
+                        }
+                        if (password_login.length === 0) {
+                            $("#show").append("<h4 align='center'>Your password is empty<br>");
+                            $("#show").load();
+                            $("#show").show();
+                            return;
+                        }
+                        var myData = 'username=' + username_login + "&password=" + password_login; //build a post data structure
+
+                        $.ajax({
+                            url: URLs,
+                            data: myData,
+                            type: 'POST',
+                            dataType: 'text',
+                            success: function (msg) {
+                                alert(msg);
+
+                                $.cookie("username", username_login, {expires: 1});
+
+                                $.cookie("password", password_login, {expires: 1});
+                                if (msg === "Welcome Home !") {
+                                    window.location.href = "index.html";
+                                }
+
+                                // $("#showmsg").html( msg );
+                            },
+                            error: function (xhr, ajaxOptions, thrownError) {
+                                alert(xhr.status);
+                                alert(thrownError);
+                            }
+                        });
+                    }
+                });
+
+
+            });
+
+        </script>
+    </head>
+
+    <body>
+
+        <div data-role="page" id="login">
+            <div data-role="header" data-theme="b">
+                <h1>Login</h1>
+                <a href="#" data-icon="back" data-rel="back" title="Go back" rel="external">BACK</a>
+                <a href="#popupMenu" data-history="false" data-rel="popup" data-transition="slideup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-gear ui-btn-icon-right ui-btn-a">Menu</a>
+                <div data-role="popup" id="popupMenu" data-theme="b">
+                    <ul data-role="listview" data-inset="true" style="min-width:210px;">
+                        <li data-role="list-divider" >Choose a page</li>
+                        <li><a href="index.html" rel="external">Home</a></li>
+                        <li><a href="login.html" rel="external">Login</a></li>
+                        <li><a href="start.html" rel="external">Quit Smoking: START</a></li>
+                        <li><a href="board.html" rel="external">Message Board</a></li>
+                        <li><a href="edit.html" rel="external">Edit Content</a></li>
+                        <li><a href="contact.html" rel="external">Contact us</a></li>
+                        <li><a href="logout.php" rel="external">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <img src='images/qsmoke.jpg' border='0' alt="Quit smoking" style="width:100%;height:100%;"/>
+
+
+
+            <h4 align="center">User Name:<input type="text" id="mylogin"></h4>
+            <h4 align="center">Password:<input type="password" id="mypassword"></h4>
+            <h4 align="center"><button id="login_btn">Login</button></h4>
+
+            <p></p>
+            <div id="show"></div>
+            <p>&nbsp;</p>
+
+        </div>
+    </body>
+</html>
